@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8C968902-F290-4F86-819E-76E720060A2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{ACBD0E72-69B3-4554-BA1A-918F38913B10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1AE2D4C3-8FF0-495F-9529-BD78625EB6C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{60218256-1960-49AC-8A85-C155B3C925BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identidade", "Identidade", "{FBFBA038-F377-4AA2-9B1F-845E159856AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6D9DCF60-502A-47AC-85F7-ADBC7B746410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.Core", "..\src\building blocks\MPStore.Core\MPStore.Core.csproj", "{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACBD0E72-69B3-4554-BA1A-918F38913B10} = {8C968902-F290-4F86-819E-76E720060A2B}
+		{1AE2D4C3-8FF0-495F-9529-BD78625EB6C8} = {8C968902-F290-4F86-819E-76E720060A2B}
+		{60218256-1960-49AC-8A85-C155B3C925BB} = {8C968902-F290-4F86-819E-76E720060A2B}
+		{FBFBA038-F377-4AA2-9B1F-845E159856AA} = {1AE2D4C3-8FF0-495F-9529-BD78625EB6C8}
+		{6D9DCF60-502A-47AC-85F7-ADBC7B746410} = {ACBD0E72-69B3-4554-BA1A-918F38913B10}
+		{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60} = {6D9DCF60-502A-47AC-85F7-ADBC7B746410}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {888E519B-F13E-479A-BA0B-0AFEAB671777}
+	EndGlobalSection
+EndGlobal
