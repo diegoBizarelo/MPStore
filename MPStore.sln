@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identidade", "Identidade", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6D9DCF60-502A-47AC-85F7-ADBC7B746410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.Core", "..\src\building blocks\MPStore.Core\MPStore.Core.csproj", "{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.Core", "src\building blocks\MPStore.Core\MPStore.Core.csproj", "{50F4717E-6CAB-4BCD-9CC4-7C5DD1110E60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
