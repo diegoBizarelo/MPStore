@@ -1,5 +1,5 @@
 ﻿using FluentValidation.Results;
-using NetDevPack.Data;
+using MPStore.Core.Data;
 
 namespace MPStore.Core.Messages
 {
@@ -19,7 +19,7 @@ namespace MPStore.Core.Messages
 
         protected async Task<ValidationResult> PersistirDado(IUnitOfWork uow) 
         {
-            if (!await uow.Commit()) AddError("Um error ocorreu enquanto tentava salvar.");
+            if (!await uow.CommitAsync()) AddError("Um error ocorreu enquanto tentava salvar.");
             return ValidationResult;
         }
     }
