@@ -27,11 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPStore.Catalogo.API", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{F8AB5734-6C29-4473-8293-478D30B127A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.Cliente.API", "src\services\MPStore.Cliente.API\MPStore.Cliente.API.csproj", "{9E85C9A0-3D92-42B5-A52F-6F0ECB4E99EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPStore.Cliente.API", "src\services\MPStore.Cliente.API\MPStore.Cliente.API.csproj", "{9E85C9A0-3D92-42B5-A52F-6F0ECB4E99EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{F54C964C-5EF8-4477-961F-7833A9E65051}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.MessageBus", "src\building blocks\MPStore.MessageBus\MPStore.MessageBus.csproj", "{A584E933-49EC-498A-8414-92989D5DB1F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPStore.MessageBus", "src\building blocks\MPStore.MessageBus\MPStore.MessageBus.csproj", "{A584E933-49EC-498A-8414-92989D5DB1F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.Identidade.API", "src\services\MPStore.Identidade.API\MPStore.Identidade.API.csproj", "{88C395BA-DD1F-41D3-8C4E-E48CE84B3015}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{A584E933-49EC-498A-8414-92989D5DB1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A584E933-49EC-498A-8414-92989D5DB1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A584E933-49EC-498A-8414-92989D5DB1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C395BA-DD1F-41D3-8C4E-E48CE84B3015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C395BA-DD1F-41D3-8C4E-E48CE84B3015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C395BA-DD1F-41D3-8C4E-E48CE84B3015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C395BA-DD1F-41D3-8C4E-E48CE84B3015}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{9E85C9A0-3D92-42B5-A52F-6F0ECB4E99EE} = {F8AB5734-6C29-4473-8293-478D30B127A4}
 		{F54C964C-5EF8-4477-961F-7833A9E65051} = {ACBD0E72-69B3-4554-BA1A-918F38913B10}
 		{A584E933-49EC-498A-8414-92989D5DB1F4} = {F54C964C-5EF8-4477-961F-7833A9E65051}
+		{88C395BA-DD1F-41D3-8C4E-E48CE84B3015} = {FBFBA038-F377-4AA2-9B1F-845E159856AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {888E519B-F13E-479A-BA0B-0AFEAB671777}
