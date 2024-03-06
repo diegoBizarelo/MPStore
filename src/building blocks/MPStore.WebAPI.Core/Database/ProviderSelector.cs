@@ -10,6 +10,7 @@ namespace MPStore.WebAPI.Core.Database
             (DatabaseType, string) options) where TContext : DbContext
         {
             var (database, connString) = options;
+
             return database switch
             {
                 DatabaseType.SqlServer => services.PersistStore<TContext>(Build(connString).With().SqlServer),

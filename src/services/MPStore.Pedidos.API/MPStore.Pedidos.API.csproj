@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\MPStore.MessageBus\MPStore.MessageBus.csproj" />
+    <ProjectReference Include="..\..\building blocks\MPStore.WebAPI.Core\MPStore.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\MPStore.Pedidos.Domain\MPStore.Pedidos.Domain.csproj" />
+    <ProjectReference Include="..\MPStore.Pedidos.Infra\MPStore.Pedidos.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
