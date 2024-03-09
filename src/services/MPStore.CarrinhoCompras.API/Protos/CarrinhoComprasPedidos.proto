@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "MPStore.ShoppingCart.API.Services.gRPC";
+
+package CarrinhoComprastAPI;
+
+service CarrinhoComprasPedidos {
+	rpc ObterCarrinhoCompras(ObterCarrinhoComprasRequest) returns (ClienteCarrinhoComprasClientResponse) {}	
+}
+
+message ObterCarrinhoComprasRequest {
+
+}
+
+message ClienteCarrinhoComprasClientResponse {
+	string id = 1;
+	string customerid  = 2;
+	double total = 3;
+	repeated CarrinhoComprasItemResponse items = 4;
+}
+
+message CarrinhoComprasItemResponse {
+	string id = 1;
+	string productid = 2;
+	string name  = 3;
+	int32 quantity = 4;
+	double price  = 5;
+	string image  = 6;
+}
