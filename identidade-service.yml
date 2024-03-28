@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: identity-service
+spec:
+  selector:
+    app: identity
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3003
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: identity
+  template:
+    metadata:
+      labels:
+        app: identity
+    spec:
+      containers:
+        - name: identity
+          image: mpstore-identity-api:v1
+          ports:
+            - containerPort: 3003
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: identity-db-service
+spec:
+  selector:
+    app: identity-db
+  ports:
+    - protocol: TCP
+      port: 1433
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: identity-db-statefulset
+spec:
+  replicas: 3
+  serviceName: identity-db-service
+  selector:
+    matchLabels:
+      app: identity-db
+  template:
+    metadata:
+      labels:
+        app: identity-db
+    spec:
+      containers:
+        - name: identity-db
+          image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          env:
+            - name: MSSQL_SA_PASSWORD
+              value: "DevOps@01-2024"
+            - name: ACCEPT_EULA
+              value: "Y"
+          ports:
+            - containerPort: 1433
+          volumeMounts:
+            - mountPath: "/mssql/data"
+              name: sqldata-storage

@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service
+spec:
+  selector:
+    app: cart
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3002
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:   cart
+  template:
+    metadata:
+      labels:
+        app: cart
+    spec:
+      containers:
+        - name: cart
+          image: mpstore-cart-api:v1
+          ports:
+            - containerPort: 3002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-db-service
+spec:
+  selector:
+    app: cart-db
+  ports:
+    - protocol: TCP
+      port: 1433
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: cart-db-statefulset
+spec:
+  replicas: 3
+  serviceName: cart-db-service
+  selector:
+    matchLabels:
+      app: cart-db
+  template:
+    metadata:
+      labels:
+        app: cart-db
+    spec:
+      containers:
+        - name: cart-db
+          image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          env:
+            - name: MSSQL_SA_PASSWORD
+              value: "DevOps@01-2024"
+            - name: ACCEPT_EULA
+              value: "Y"
+          ports:
+            - containerPort: 1433
+          volumeMounts:
+            - mountPath: "/mssql/data"
+              name: sqldata-storage
+

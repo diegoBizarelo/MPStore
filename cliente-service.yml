@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+spec:
+  selector:
+    app: client
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: mpstore-cliente-api:v1
+          ports:
+            - containerPort: 3001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-db-service
+spec:
+  selector:
+    app: client-db
+  ports:
+    - protocol: TCP
+      port: 1433
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: client-db-statefulset
+spec:
+  replicas: 3
+  serviceName: client-db-service
+  selector:
+    matchLabels:
+      app: client-db
+  template:
+    metadata:
+      labels:
+        app: client-db
+    spec:
+      containers:
+        - name: client-db
+          image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          env:
+            - name: MSSQL_SA_PASSWORD
+              value: "DevOps@01-2024"
+            - name: ACCEPT_EULA
+              value: "Y"
+          ports:
+            - containerPort: 1433
+          volumeMounts:
+            - mountPath: "/mssql/data"
+              name: sqldata-storage
