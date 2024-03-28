@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\building blocks\MPStore.MessageBus\MPStore.MessageBus.csproj" />
     <ProjectReference Include="..\..\building blocks\MPStore.WebAPI.Core\MPStore.WebAPI.Core.csproj" />
   </ItemGroup>

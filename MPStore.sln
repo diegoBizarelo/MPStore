@@ -45,7 +45,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPStore.Pedidos.Infra", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarrinhoCompras", "CarrinhoCompras", "{6ECB8854-E6A5-477B-8CFE-8B8E9FB3071D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPStore.CarrinhoCompras.API", "src\services\MPStore.CarrinhoCompras.API\MPStore.CarrinhoCompras.API.csproj", "{C677E38E-ABF7-4F67-98BA-BE8F82B4080F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPStore.CarrinhoCompras.API", "src\services\MPStore.CarrinhoCompras.API\MPStore.CarrinhoCompras.API.csproj", "{C677E38E-ABF7-4F67-98BA-BE8F82B4080F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts-kubernetes", "scripts-kubernetes", "{695CB8B0-EC59-4A46-AE9D-5718C75F53E8}"
+	ProjectSection(SolutionItems) = preProject
+		cart-service.yml = cart-service.yml
+		catalogo-service.yml = catalogo-service.yml
+		cliente-service.yml = cliente-service.yml
+		identidade-service.yml = identidade-service.yml
+		pedido-service.yml = pedido-service.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
